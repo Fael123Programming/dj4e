@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Authentication Info<title>
+    </head>
+    <body>
+        <h1>Current request.path {{ request.path }}</h1>
+        {% if user.is_authenticated %}
+            <p>Authenticated as 
+                <pre>
+                    Name: {{ user.get_full_name }}
+                    E-mail: {{ user.email }}
+                    Id: {{ user.id }}
+                </pre>
+            </p>
+            <p>You can <a href="{% url 'logout' %}?next={% url 'authz:open' %}">logout</a></p>
+        {% else %}
+            <p>You are not logged in</p>
+            <p>You can <a href="{% url 'login' %}?next={{ request.path }}">login</a> if you want</p>
+        {% endif %}
+    </body>
+</html>

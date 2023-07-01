@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Welcome, dear fellow!<title>
+    </head>
+    <body>
+        <header style="text-align: center;">
+            <h1>Welcome to the DJ4E Samples</h1>
+        </header>
+        <div style="text-align: center;">
+            {% if samples %}
+                <ul>
+                    {% for sample in samples %}
+                        <li>
+                            <p>
+                                <a href="{{ sample.href }}" target="_blank">{{ sample.name }}</a> - 
+                                {{ sample.description }}
+                            </p>
+                        </li>
+                    {% endfor %}
+                <ul>
+            {% else %}
+                <p>
+                    No samples to show
+                </p>
+            {% endif %}
+        </div>
+    </body>
+</html>

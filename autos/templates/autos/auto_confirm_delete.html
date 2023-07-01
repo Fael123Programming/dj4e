@@ -1,0 +1,11 @@
+{% extends 'base_bootstrap.html' %}
+
+{% block content %}
+    <h1>Delete Auto</h1>
+    <p>Are you sure you want to delete the auto <b>{{ auto.nickname }}</b>?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes">
+        <input type="submit" value="Cancel" onclick="window.location='{% url 'autos:all' %}'; return false;">
+    </form>
+{% endblock %}
