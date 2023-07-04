@@ -21,3 +21,4 @@ class MainView(View):
             'samples': samples
         }
         return render(request, 'home/samples.html', ctx)
+        # return HttpResponse('<h1>Hello world!</h1>')
